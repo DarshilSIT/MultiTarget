@@ -1,0 +1,43 @@
+For debugging mode make sure yarn or npm is started.
+
+———— FOR ANDROID ————
+Debug
+cd android && ENVFILE=.env.development ./gradlew assembleDebug && cd .. && adb install android/app/build/outputs/apk/debug/app-debug.apk && adb shell am start -n com.multitarget/.MainActivity
+
+Production 
+cd android && ENVFILE=.env.production ./gradlew assembleRelease && cd .. && adb install android/app/build/outputs/apk/release/app-release.apk && adb shell am start -n com.multitarget/.MainActivity
+
+Staging
+cd android && ENVFILE=.env.staging ./gradlew assembleStaging && cd .. && adb install android/app/build/outputs/apk/staging/app-staging.apk && adb shell am start -n com.multitarget/.MainActivity
+
+
+# Development #
+Debug
+cd android && ENVFILE=.env.development ./gradlew assembleDevelopmentDebug && cd .. && adb install android/app/build/outputs/apk/development/debug/app-development-debug.apk && adb shell am start -n com.multitarget/.MainActivity
+
+Release
+cd android && ENVFILE=.env.development ./gradlew assembleDevelopmentRelease && cd .. && adb install android/app/build/outputs/apk/development/release/app-development-release.apk && adb shell am start -n com.multitarget/.MainActivity
+
+# Staging #
+Debug
+cd android && ENVFILE=.env.staging ./gradlew assembleStagingDebug && cd .. && adb install android/app/build/outputs/apk/staging/debug/app-staging-debug.apk && adb shell am start -n com.multitarget/.MainActivity
+
+Release
+cd android && ENVFILE=.env.staging ./gradlew assembleStagingRelease && cd .. && adb install android/app/build/outputs/apk/staging/release/app-staging-release.apk && adb shell am start -n com.multitarget/.MainActivity
+
+# Production #
+Debug
+cd android && ENVFILE=.env.production ./gradlew assembleProductionDebug && cd .. && adb install android/app/build/outputs/apk/production/debug/app-production-debug.apk && adb shell am start -n com.multitarget/.MainActivity
+
+Release
+cd android && ENVFILE=.env.production ./gradlew assembleProductionRelease && cd .. && adb install android/app/build/outputs/apk/production/release/app-production-release.apk && adb shell am start -n com.multitarget/.MainActivity
+
+
+
+———— FOR IOS ————
+Step 1: Open Xcode Project. By below command
+        cd ios && open MultiTarget.xcworkspace
+
+Step 2: Select Desired Scheme to Build or Run.
+
+Step 3: Build or Run Project.
