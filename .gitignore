@@ -187,12 +187,12 @@ package-lock.json
 
 # CircleCI
 .circleci/generated_config.yml
-/android/app
-/ios/NotificationPoC.xcodeproj/xcshareddata/xcschemes
-/ios/NotificationPoC.xcworkspace
-android/gradle.properties
-android/gradlew.bat
-android/settings.gradle
-android/build.gradle
-android/gradlew
+# /android/app
+/ios/MultiTarget.xcodeproj/xcshareddata/xcschemes
+/ios/MultiTarget.xcworkspace
+# android/gradle.properties
+# android/gradlew.bat
+# android/settings.gradle
+# android/build.gradle
+# android/gradlew
 ios/Podfile.lock

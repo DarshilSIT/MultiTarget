@@ -1,6 +1,6 @@
 For debugging mode make sure yarn or npm is started.
 
-———— FOR ANDROID ————
+———— FOR ANDROID TARGET IN SINGLE APP ————
 Debug
 cd android && ENVFILE=.env.development ./gradlew assembleDebug && cd .. && adb install android/app/build/outputs/apk/debug/app-debug.apk && adb shell am start -n com.multitarget/.MainActivity
 
@@ -10,7 +10,7 @@ cd android && ENVFILE=.env.production ./gradlew assembleRelease && cd .. && adb 
 Staging
 cd android && ENVFILE=.env.staging ./gradlew assembleStaging && cd .. && adb install android/app/build/outputs/apk/staging/app-staging.apk && adb shell am start -n com.multitarget/.MainActivity
 
-
+———— FOR ANDROID TARGET WITH DIFFERENT APP ————
 # Development #
 Debug
 cd android && ENVFILE=.env.development ./gradlew assembleDevelopmentDebug && cd .. && adb install android/app/build/outputs/apk/development/debug/app-development-debug.apk && adb shell am start -n com.multitarget/.MainActivity
@@ -41,3 +41,15 @@ Step 1: Open Xcode Project. By below command
 Step 2: Select Desired Scheme to Build or Run.
 
 Step 3: Build or Run Project.
+
+———— FOR IOS RUNNING WITH COMMANDS ————
+yarn ios --scheme "MultiTargetDevelopment" --simulator=\"iPhone 15 Pro\" --mode Debug
+
+yarn ios --scheme "MultiTarget" --simulator=\"iPhone 15 Pro\" --mode Debug
+
+yarn ios --scheme "MultiTargetStaging" --simulator=\"iPhone 15 Pro\" --mode Debug
+
+
+xcodebuild clean -project MultiTarget.xcodeproj -scheme MultiTargetStaging
+
+xcodebuild build -project MultiTarget.xcodeproj -scheme MultiTargetStaging
